@@ -166,7 +166,7 @@ BOARD_AVB_RECOVERY_ROLLBACK_INDEX := 1
 BOARD_AVB_RECOVERY_ROLLBACK_INDEX_LOCATION := 1
 
 # Inherit from the proprietary version
--include vendor/xiaomi/raphael/BoardConfigVendor.mk
+include vendor/xiaomi/raphael/BoardConfigVendor.mk
 
 # FOD key for InputDispatcher to skip
 TARGET_INPUTDISPATCHER_SKIP_EVENT_KEY := 338
