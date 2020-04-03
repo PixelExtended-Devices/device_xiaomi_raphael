@@ -55,6 +55,7 @@ PRODUCT_ENFORCE_RRO_TARGETS += *
 PRODUCT_PACKAGES += \
    CarrierConfigOverlayRaphael \
    FrameworksOverlayRaphael \
+   SettingsOverlayRaphael \
    SystemUIOverlayRaphael \
    TelephonyOverlayRaphael \
    TetheringConfigOverlayRaphael \
