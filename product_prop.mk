@@ -13,6 +13,10 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.adb.secure=0
 endif
 
+# Dex2oat
+PRODUCT_PRODUCT_PROPERTIES += \
+     dalvik.vm.dex2oat64.enabled=true
+
 # Misc props
 PRODUCT_PRODUCT_PROPERTIES += \
     ro.oem_unlock_supported=0 \
