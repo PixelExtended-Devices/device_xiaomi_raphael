@@ -123,7 +123,7 @@ public class PopupCameraService extends Service implements Handler.Callback {
     private boolean mBootCompleted;
 
     // Sound
-    private String[] mSoundNames = {"popup_muqin_up.ogg", "popup_muqin_down.ogg", "popup_yingyan_up.ogg", "popup_yingyan_down.ogg", "popup_mofa_up.ogg", "popup_mofa_down.ogg", "popup_jijia_up.ogg", "popup_jijia_down.ogg", "popup_chilun_up.ogg", "popup_chilun_down.ogg", "popup_cangmen_up.ogg", "popup_cangmen_down.ogg"};
+    private String[] mSoundNames = {"popup_muqin_up.ogg", "popup_muqin_down.ogg", "popup_yingyan_up.ogg", "popup_yingyan_down.ogg", "popup_mofa_up.ogg", "popup_mofa_down.ogg", "popup_jijia_up.ogg", "popup_jijia_down.ogg", "popup_chilun_up.ogg", "popup_chilun_down.ogg", "popup_cangmen_up.ogg", "popup_cangmen_down.ogg", "popup_imperial_march_up.ogg", "popup_imperial_march_down.ogg", "popup_lightsaber_up.ogg", "popup_lightsaber_down.ogg", "popup_throne_room_up.ogg", "popup_throne_room_down.ogg"};
     private SoundPool mSoundPool;
     private int[] mSounds = new int[mSoundNames.length];
 
