@@ -157,6 +157,9 @@ media/audio/ui/popup_throne_room_up.ogg|e52d7c2a15f899a02ae02184a31ffe89f6bc167c
 # OMX
 lib/libstagefright_softomx.so
 
+# Power-off charging daemon - from miui_CMI_20.9.28_171a6c0851_11.0.zip
+-bin/charger:bin/chargeonlymode|c745c3febb01b2b6a868a30ddb7bd8c1c343b3e7
+
 # RIL
 etc/permissions/privapp-permissions-qti.xml
 etc/permissions/qti_libpermissions.xml|445f784e5cf0a21717dadb36a3f17af75a3af02f
