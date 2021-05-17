@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!--
-     Copyright (C) 2018 The LineageOS Project
+<!-- Copyright (C) 2019 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -14,13 +13,8 @@
      See the License for the specific language governing permissions and
      limitations under the License.
 -->
-<resources>
-    <!-- Popup camera settings -->
-    <string name="popup_sound_imperial_march">Star Wars© Imperial March</string>
-    <string name="popup_sound_lightsaber">Star Wars© Lightsaber</string>
-    <string name="popup_sound_throne_room">Star Wars© Throne Room </string>
 
-    <!-- Raise to wake strings-->
-    <string name="raise_to_wake_gesture_title">Raise to wake</string>
-    <string name="raise_to_wake_gesture_summary">Wake up the device instead of pulsing notification</string>
-</resources>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/switch_bar_bg" />
+</shape>

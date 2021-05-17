@@ -1,0 +1,3 @@
+-keep class org.android.settings.doze.* {
+  *;
+}
