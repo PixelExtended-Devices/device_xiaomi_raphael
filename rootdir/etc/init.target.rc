@@ -27,8 +27,6 @@
 #
 #
 
-import /vendor/etc/init/init.mi_thermald.rc
-
 on early-init
     write /proc/sys/kernel/sched_boost 1
 
@@ -107,8 +105,6 @@ on post-fs-data
     mkdir /tombstones/dsps 0771 system system
 
     mkdir /data/vendor/nnhal 0700 system system
-    mkdir /data/vendor/thermal 0771 root system
-    mkdir /data/vendor/thermal/config 0771 root system
     mkdir /data/vendor/nfc 0770 nfc nfc
 
     chmod 0644 /dev/elliptic0
