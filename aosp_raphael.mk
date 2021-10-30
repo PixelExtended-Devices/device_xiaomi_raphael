@@ -12,8 +12,10 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 # Inherit from raphael device
 $(call inherit-product, device/xiaomi/raphael/device.mk)
 
-# Inherit some common Arrow stuff.
+# Inherit some PEX stuff.
 $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
+
+CUSTOM_BUILD_TYPE := OFFICIAL
 
 # Device identifier. This must come after all inclusions.
 PRODUCT_NAME := aosp_raphael
