@@ -61,6 +61,10 @@ PRODUCT_PACKAGES += \
    TetheringConfigOverlayRaphael \
    WifiOverlayRaphael
 
+# KProfiles
+PRODUCT_PACKAGES += \
+    KProfiles
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
