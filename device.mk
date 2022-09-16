@@ -48,6 +48,10 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-aosp
 
+# KProfiles
+PRODUCT_PACKAGES += \
+    KProfiles
+
 # ANT+
 PRODUCT_PACKAGES += \
     AntHalService-Soong \
