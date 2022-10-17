@@ -18,4 +18,8 @@
          have distinct intensity levels -->
     <bool name="config_vibration_supports_multiple_intensities">true</bool>
 
+    <!-- PEX Maintainer -->
+    <string name="pex_maintainer_name" translatable="false">Ralf979</string>
+    <string name="pex_maintainer_group" translatable="false">https://t.me/ralf979street</string>
+
 </resources>
