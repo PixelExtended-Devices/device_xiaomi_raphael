@@ -19,13 +19,13 @@
 #include <stdint.h>
 
 uint32_t getUdfpsZOrder(uint32_t z, bool touched) {
-    if (touched) {
-        z |= FOD_PRESSED_LAYER_ZORDER;
-    }
+  if (touched) {
+    z |= FOD_PRESSED_LAYER_ZORDER;
+  }
 
-    return z;
+  return z;
 }
 
 uint64_t getUdfpsUsageBits(uint64_t usageBits, bool) {
-    return usageBits;
+  return usageBits;
 }

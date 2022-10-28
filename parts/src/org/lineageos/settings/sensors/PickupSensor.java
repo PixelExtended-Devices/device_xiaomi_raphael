@@ -24,72 +24,67 @@ import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.os.SystemClock;
 import android.util.Log;
-
-import org.lineageos.settings.doze.DozeUtils;
-
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
+import org.lineageos.settings.doze.DozeUtils;
 
 public class PickupSensor implements SensorEventListener {
+  private static final boolean DEBUG = false;
+  private static final String TAG = "PickupSensor";
 
-    private static final boolean DEBUG = false;
-    private static final String TAG = "PickupSensor";
+  private static final int MIN_PULSE_INTERVAL_MS = 2500;
 
-    private static final int MIN_PULSE_INTERVAL_MS = 2500;
+  private SensorManager mSensorManager;
+  private Sensor mSensor;
+  private Context mContext;
+  private ExecutorService mExecutorService;
 
-    private SensorManager mSensorManager;
-    private Sensor mSensor;
-    private Context mContext;
-    private ExecutorService mExecutorService;
+  private long mEntryTimestamp;
 
-    private long mEntryTimestamp;
+  public PickupSensor(Context context) {
+    mContext = context;
+    mSensorManager = mContext.getSystemService(SensorManager.class);
+    mSensor = SensorsUtils.getSensor(mSensorManager, "xiaomi.sensor.pickup");
+    mExecutorService = Executors.newSingleThreadExecutor();
+  }
 
-    public PickupSensor(Context context) {
-        mContext = context;
-        mSensorManager = mContext.getSystemService(SensorManager.class);
-        mSensor = SensorsUtils.getSensor(mSensorManager, "xiaomi.sensor.pickup");
-        mExecutorService = Executors.newSingleThreadExecutor();
+  private Future<?> submit(Runnable runnable) { return mExecutorService.submit(runnable); }
+
+  @Override
+  public void onSensorChanged(SensorEvent event) {
+    if (DEBUG)
+      Log.d(TAG, "Got sensor event: " + event.values[0]);
+
+    long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
+    if (delta < MIN_PULSE_INTERVAL_MS) {
+      return;
     }
 
-    private Future<?> submit(Runnable runnable) {
-        return mExecutorService.submit(runnable);
+    mEntryTimestamp = SystemClock.elapsedRealtime();
+
+    if (event.values[0] == 1) {
+      DozeUtils.launchDozePulse(mContext);
     }
+  }
 
-    @Override
-    public void onSensorChanged(SensorEvent event) {
-        if (DEBUG) Log.d(TAG, "Got sensor event: " + event.values[0]);
+  @Override
+  public void onAccuracyChanged(Sensor sensor, int accuracy) {
+    /* Empty */
+  }
 
-        long delta = SystemClock.elapsedRealtime() - mEntryTimestamp;
-        if (delta < MIN_PULSE_INTERVAL_MS) {
-            return;
-        }
+  public void enable() {
+    if (DEBUG)
+      Log.d(TAG, "Enabling");
+    submit(() -> {
+      mSensorManager.registerListener(this, mSensor, SensorManager.SENSOR_DELAY_NORMAL);
+      mEntryTimestamp = SystemClock.elapsedRealtime();
+    });
+  }
 
-        mEntryTimestamp = SystemClock.elapsedRealtime();
-
-        if (event.values[0] == 1) {
-            DozeUtils.launchDozePulse(mContext);
-        }
-    }
-
-    @Override
-    public void onAccuracyChanged(Sensor sensor, int accuracy) {
-        /* Empty */
-    }
-
-    public void enable() {
-        if (DEBUG) Log.d(TAG, "Enabling");
-        submit(() -> {
-            mSensorManager.registerListener(this, mSensor,
-                    SensorManager.SENSOR_DELAY_NORMAL);
-            mEntryTimestamp = SystemClock.elapsedRealtime();
-        });
-    }
-
-    public void disable() {
-        if (DEBUG) Log.d(TAG, "Disabling");
-        submit(() -> {
-            mSensorManager.unregisterListener(this, mSensor);
-        });
-    }
+  public void disable() {
+    if (DEBUG)
+      Log.d(TAG, "Disabling");
+    submit(() -> { mSensorManager.unregisterListener(this, mSensor); });
+  }
 }
