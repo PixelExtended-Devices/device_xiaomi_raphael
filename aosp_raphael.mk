@@ -22,6 +22,7 @@ TARGET_GAPPS_ARCH := arm64
 FACE_UNLOCK_SUPPORTED := true
 TARGET_INCLUDE_LIVE_WALLPAPERS := true
 TARGET_SUPPORTS_QUICK_TAP := true
+EXTRA_UDFPS_ANIMATIONS := true
 PEX_BUILD_TYPE := OFFICIAL
 
 # Device identifier. This must come after all inclusions.
