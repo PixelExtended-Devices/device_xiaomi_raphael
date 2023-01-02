@@ -39,8 +39,3 @@ PRODUCT_CHARACTERISTICS := nosdcard
 PRODUCT_BUILD_PROP_OVERRIDES += \
     TARGET_DEVICE="raphael" \
     PRODUCT_NAME="raphael"
-
-# Pixel Launcher Mod
-$(call inherit-product, vendor/PixelLauncher/PixelLauncher.mk)
-
-ICONS_VARIANT := true
