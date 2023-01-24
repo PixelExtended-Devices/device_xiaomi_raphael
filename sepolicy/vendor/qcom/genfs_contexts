@@ -23,5 +23,9 @@ genfscon sysfs /devices/virtual/misc/msm_qcelp/wakeup                           
 genfscon sysfs /devices/virtual/misc/msm_wma/wakeup                                                                                                u:object_r:sysfs_wakeup:s0
 genfscon sysfs /devices/virtual/misc/msm_wmapro/wakeup                                                                                             u:object_r:sysfs_wakeup:s0
 
-# udfps_pressed sensor
+# udfps sensor
 genfscon sysfs /devices/platform/goodix_ts.0/udfps_pressed u:object_r:vendor_sysfs_sensors:s0
+
+# double tap sensor
+genfscon sysfs /devices/platform/goodix_ts.0/double_tap_pressed u:object_r:vendor_sysfs_sensors:s0
+genfscon sysfs /devices/platform/goodix_ts.0/double_tap_enabled u:object_r:vendor_sysfs_sensors:s0
