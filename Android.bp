@@ -2,6 +2,15 @@ soong_namespace {
     imports: [
         "hardware/google/interfaces",
         "hardware/google/pixel",
-        "hardware/xiaomi",
     ],
+}
+
+hidl_package_root {
+    name: "vendor.xiaomi",
+    path: "device/xiaomi/raphael/interfaces",
+}
+
+hidl_package_root {
+    name: "vendor.goodix",
+    path: "device/xiaomi/raphael/interfaces",
 }
