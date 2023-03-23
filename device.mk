@@ -46,7 +46,18 @@ PRODUCT_COPY_FILES += \
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
-    $(LOCAL_PATH)/overlay-voltage
+    $(LOCAL_PATH)/overlay-custom
+
+PRODUCT_ENFORCE_RRO_TARGETS += *
+
+# Overlays-RRO
+PRODUCT_PACKAGES += \
+   CarrierConfigOverlayRaphael \
+   FrameworksOverlayRaphael \
+   SystemUIOverlayRaphael \
+   TelephonyOverlayRaphael \
+   TetheringConfigOverlayRaphael \
+   WifiOverlayRaphael
 
 # ANT+
 PRODUCT_PACKAGES += \
@@ -397,7 +408,6 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
-    CarrierConfigOverlay \
     android.hardware.radio@1.5.vendor \
     android.hardware.radio.config@1.2.vendor \
     android.hardware.radio.deprecated@1.0.vendor \
@@ -442,8 +452,7 @@ PRODUCT_PACKAGES += \
     qti_telephony_hidl_wrapper.xml \
     qti-telephony-utils \
     qti_telephony_utils.xml \
-    telephony-ext \
-    TelephonyResRaphael
+    telephony-ext
 
 PRODUCT_BOOT_JARS += \
     telephony-ext
@@ -499,7 +508,6 @@ PRODUCT_PACKAGES += \
     vendor.qti.hardware.wifi.supplicant@2.0.vendor \
     vendor.qti.hardware.wifi.supplicant@2.1.vendor \
     libwpa_client \
-    TetheringConfigOverlay \
     WifiOverlay \
     wpa_supplicant \
     wpa_supplicant.conf
