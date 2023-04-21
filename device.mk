@@ -48,6 +48,10 @@ DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
     $(LOCAL_PATH)/overlay-aosp
 
+# RRO (pixys)
+PRODUCT_PACKAGES += \
+    BoostFrameworkOverlay
+
 # KProfiles
 PRODUCT_PACKAGES += \
     KProfiles
