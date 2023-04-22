@@ -1,0 +1,20 @@
+[
+  {
+    "remote": "pixelextended-devices",
+    "repository": "kernel_xiaomi_raphael",
+    "target_path": "kernel/xiaomi/raphael",
+    "branch": "trece"
+  },
+  {
+    "remote": "pixelextended-devices",
+    "repository": "vendor_xiaomi_raphael",
+    "target_path": "vendor/xiaomi/raphael",
+    "branch": "trece"
+   },
+  {
+    "remote": "github",
+    "repository": "ArrowOS-Devices/android_hardware_xiaomi",
+    "target_path": "hardware/xiaomi",
+    "branch": "arrow-13.0"
+  }
+]
