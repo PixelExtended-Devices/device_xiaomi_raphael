@@ -10,5 +10,11 @@
     "repository": "vendor_xiaomi_raphael",
     "target_path": "vendor/xiaomi/raphael",
     "branch": "trece"
-   }
+   },
+  {
+    "remote": "github",
+    "repository": "ralf979/packages_apps_Kprofiles",
+    "target_path": "packages/apps/Kprofiles",
+    "branch": "trece"
+  }
 ]
