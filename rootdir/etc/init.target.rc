@@ -31,6 +31,7 @@ on early-init
     write /proc/sys/kernel/sched_boost 1
 
 on init
+    write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
     write /dev/stune/foreground/schedtune.sched_boost_no_override 1
     write /dev/stune/top-app/schedtune.sched_boost_no_override 1
 
@@ -230,6 +231,7 @@ on charger
     wait /dev/block/platform/soc/1d84000.ufshc/by-name/persist
     mount ext4 /dev/block/bootdevice/by-name/persist /mnt/vendor/persist nosuid nodev barrier=1
 
+    start vendor.power_off_alarm
     setprop sys.usb.controller a600000.dwc3
     setprop sys.usb.configfs 1
     start vendor.qcom-post-boot
